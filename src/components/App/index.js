@@ -13,7 +13,7 @@ import Detail from '../Detail'
 import {
     searchGnomes,
     retrieveGnome
-
+    
 } from '../../logic'
 
 // STATES
@@ -59,7 +59,6 @@ export default withRouter(function ({ history }) {
                 <Route path="/search" render={() => <Search  onSearch={handleSearch} gnomes={gnomes} error={error} 
                         onResultsRender={gnomes => <Results items={gnomes} onItemRender={item => <ResultItem item={item} 
                         key={item.id} onClick={handleDetail} />} />} />} />
-
                 <Route path="/detail" render={() => <Detail item={gnome} onBack={handleBackToSearch}  />} /> 
         </>
     )

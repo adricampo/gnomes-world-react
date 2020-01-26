@@ -1,10 +1,9 @@
 const {dataResponse} = require('../../utils/fetch')
 
-export default function (query, criteria) { 
+export default function (query, criteria) { //test 
     return (async () => {
         query = query.toUpperCase()
         const {Brastlewark} = await dataResponse()
-        
         switch (criteria) { 
             case 'name': 
                 return Brastlewark.filter(gnome => gnome.name.toUpperCase().includes(query)); 
