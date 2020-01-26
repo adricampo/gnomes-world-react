@@ -14,32 +14,8 @@ const validate = {
         this.typeOf('function', target)
     },
 
-    number(target) {
-        this.typeOf('number', target)
-    },
- 
-    gender(target) {
-        this.typeOf('gender', target)
-    },
-
-    level(target) {
-        this.typeOf('level', target)
-    },
-
-    date(target) {
-        this.typeOf('date', target)
-    },
-
-    time(target) {
-        this.typeOf('time', target)
-    },
-
     boolean(target) {
         this.typeOf('boolean', target)
-    },
-
-    team(target) {
-        this.typeOf('team', target)
     },
 
     instanceOf(type, target) {
@@ -50,13 +26,16 @@ const validate = {
         this.instanceOf(Array, target)
     },
 
-    email(target) {
-        if (!isEmail(String(target).toLowerCase())) throw new ContentError(`${target} is not an e-mail`)
-    },
+    // personal project data
 
-    matches(name, target, ...values) {
-        if (!values.includes(target)) throw new ContentError(`${target} does not match any of the valid ${name} values: ${values}`)   
+    query(target) {
+        this.typeOf('query', target)
+    },
+ 
+    criteria(target) {
+        this.typeOf('criteria', target)
     }
+
 }
 
 validate.string.notVoid = function (name, target) {

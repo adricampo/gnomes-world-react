@@ -1,6 +1,14 @@
 const {dataResponse} = require('../../utils/fetch')
+// const {} = require('../../utils/errors')
+const validate = require('../../utils/validate')
 
-export default function (query, criteria) { //test 
+export default function (query, criteria) { 
+    validate.string(query)
+    validate.string.notVoid('query', query)
+
+    validate.string(criteria)
+    validate.string.notVoid('criteria', criteria)
+
     return (async () => {
         query = query.toUpperCase()
         const {Brastlewark} = await dataResponse()

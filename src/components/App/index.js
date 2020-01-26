@@ -13,7 +13,6 @@ import Detail from '../Detail'
 import {
     searchGnomes,
     retrieveGnome
-    
 } from '../../logic'
 
 // STATES
