@@ -5,7 +5,6 @@ const dataResponse = async () => {
     try {
         const response = await fetch(url)
         const result = await response.json() 
-        debugger
 
         return result 
 

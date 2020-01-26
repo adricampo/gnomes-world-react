@@ -1,13 +1,12 @@
 .landing
-    // background-color: #f1a3a3
     width: 100vw
     height: 100vh
     background: url("/img/gnomeworld.png")
     background-repeat: no-repeat
-    background-size: 100% 100%
+    background-size: cover
     .container
         position: absolute
-        top: 30%
+        top: 35%
         left: 30%
         background-color: #f5ee93
         border: .2rem solid black
@@ -16,22 +15,17 @@
         padding: .5rem
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         width: 37%
-        height: 12rem
+        height: 22%
         display: flex
         flex-direction: column
         justify-content: center
+        cursor: pointer
+        &:hover
+            cursor: pointer
+            transform: scale(1.1) perspective(1px)
         &__title
             color: black
             font-size: 2rem
             margin: .5rem auto .5rem auto
             display: flex
             justify-content: center
-        &__options
-            color: black
-            font-size: 1.2rem
-            margin: .5rem auto .5rem auto
-            display: flex
-            justify-content: center
-            a 
-                margin-left: .3rem
-                margin-right: .3rem
