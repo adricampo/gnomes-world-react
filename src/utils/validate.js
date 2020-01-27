@@ -1,5 +1,5 @@
 const { ContentError } = require('./errors')
-const { isTypeOf, isInstanceOf, isEmail } = require('./validators')
+const { isTypeOf, isInstanceOf } = require('./validators')
 
 const validate = {
     typeOf(type, target) {
@@ -8,6 +8,10 @@ const validate = {
 
     string(target) {
         this.typeOf('string', target)
+    },
+
+    number(target) {
+        this.typeOf('number', target)
     },
 
     function(target) {
@@ -34,12 +38,12 @@ const validate = {
  
     criteria(target) {
         this.typeOf('criteria', target)
-    }
+    },
 
 }
 
-validate.string.notVoid = function (name, target) {
-    if (!target.trim().length) throw new ContentError(`${name} is empty or blank`)
+validate.string.notVoid = function (query, target) {
+    if (!target.trim().length) throw new ContentError(`${query} is empty or blank`)
 }
 
 module.exports = validate

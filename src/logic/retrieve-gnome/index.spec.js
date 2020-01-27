@@ -3,9 +3,18 @@ const { expect } = require('chai')
 const { retrieveGnome } = require('../index')
 
 describe('logic - retrieve gnome',  () => {
+    it('should succeed on correct data', async () => { debugger
+        const id = 1
+        const gnome = await retrieveGnome(id) 
+
+        expect(gnome.id).to.equal(1)
+        expect(gnome.id).to.be.a('number')
+
+    })
 
     it('should fail if the id of the item is not found', async () => {
-        const id = '423468'
+        const id = 2312345
+        
         try {
             await retrieveGnome(id)
 
