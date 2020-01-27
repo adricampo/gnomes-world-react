@@ -18,7 +18,7 @@ export default function Search({ onSearch, gnomes, onResultsRender }) {
                         </div>
             
                     <div className="container__sortby sortby">
-                    <h2 className="sortby__subtitle">Sort by:</h2>
+                    <h2 className="sortby__subtitle">Filter:</h2>
                         <select className="sortby__submit" name="select">
                         <option className="sortby__submit" value= "none">Chose one:</option>
                             <option className="sortby__submit" value="name">Name</option>

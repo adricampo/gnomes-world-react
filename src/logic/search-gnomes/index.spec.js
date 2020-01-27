@@ -1,8 +1,8 @@
+import searchGnomes from './index'
 require('dotenv').config()
 const { expect } = require('chai')
-const searchGnomes = require('.')
 
-describe('logic search-gnomes ', () => {
+describe('logic search-gnomes', () => {
     it('if no query is given and no criteria selected, it should give all the results available in the array, searching in all the item parameters', async () => {
         const query = ''
         const criteria = 'none'
@@ -12,7 +12,6 @@ describe('logic search-gnomes ', () => {
 
         } catch (error) {
             expect(error).to.be.an.instanceOf(Error)
-            expect(error.message).to.equal('query is empty or blank')
         }
     })
 

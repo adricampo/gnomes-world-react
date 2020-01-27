@@ -1,6 +1,6 @@
+import retrieveGnome from './index'
 require('dotenv').config()
 const { expect } = require('chai')
-const retrieveGnome = require('.')
 
 describe('logic - retrieve gnome',  () => {
     it('should succeed on correct data', async () => { 

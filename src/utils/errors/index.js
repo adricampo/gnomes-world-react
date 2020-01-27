@@ -1,4 +1,7 @@
+import NotFoundError from './not-found-error'
+import ContentError from './content-error'
+
 export default {
-    NotFoundError: require('./not-found-error'),
-    ContentError: require('./content-error').default
+    NotFoundError,
+    ContentError
 }

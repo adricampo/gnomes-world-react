@@ -1,5 +1,9 @@
+import errors from './errors'
+import validators from './validators'
+import validate from './validate'
+
 export default {
-    errors: require('./errors'),
-    validators: require('./validators'),
-    validate: require('./validate')
+    errors,
+    validators,
+    validate
 }

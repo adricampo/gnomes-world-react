@@ -46,4 +46,4 @@ validate.string.notVoid = function (query, target) {
     if (!target.trim().length) throw new ContentError(`${query} is empty or blank`)
 }
 
-module.exports = validate
+export default validate
