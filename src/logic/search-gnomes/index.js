@@ -1,5 +1,4 @@
 const {dataResponse} = require('../../utils/fetch')
-// const {} = require('../../utils/errors')
 const validate = require('../../utils/validate')
 
 export default function (query, criteria) { 

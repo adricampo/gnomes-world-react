@@ -10,10 +10,8 @@ import ResultItem from '../Result-item'
 import Detail from '../Detail'
 
 // LOGIC    
-import {
-    searchGnomes,
-    retrieveGnome
-} from '../../logic'
+import logic from '../../logic'
+const { searchGnomes, retrieveGnome } = logic
 
 // STATES
 export default withRouter(function ({ history }) {
