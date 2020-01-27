@@ -1,4 +1,4 @@
-module.exports = class ContentError extends Error {
+export default class ContentError extends Error {
     constructor(message) {
         super(message)
 
