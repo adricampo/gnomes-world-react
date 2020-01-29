@@ -1,4 +1,4 @@
-export default class NotFoundError extends Error {
+module.exports = class NotFoundError extends Error {
     constructor(message) {
         super(message)
 

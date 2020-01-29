@@ -1,7 +1,7 @@
-import NotFoundError from './not-found-error'
-import ContentError from './content-error'
+const NotFoundError = require('./not-found-error')
+const ContentError =  require('./content-error')
 
-export default {
+module.exports = {
     NotFoundError,
     ContentError
 }

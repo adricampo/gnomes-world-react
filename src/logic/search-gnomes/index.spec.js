@@ -7,25 +7,50 @@ describe('logic search-gnomes', () => {
         const query = ''
         const criteria = 'none'
 
-        try {
-            await searchGnomes(query, criteria)
+        const list = await searchGnomes(query, criteria)
 
-        } catch (error) {
-            expect(error).to.be.an.instanceOf(Error)
-        }
+        expect(list).to.be.instanceOf(Array)
+        expect(list.length).to.equal(1337)
     })
 
-    it('if some criteria is given, it will show results only searching on that criteria from all the gnomes list', async () => {
+    it('if criteria is name, it will show results only searching through the name property of the items', async () => {
         const query = 'tob'
         const criteria = 'name'
 
-        try {
-            await searchGnomes(query, criteria)
+        const list = await searchGnomes(query, criteria)
+        
 
-        } catch (error) {
-            expect(error).to.be.an.instanceOf(Error)
-            expect(error.message).to.equal('No results..')
-        }
+        expect(list).to.be.instanceOf(Array)
+        expect(list).to.have.length(69)
+        expect(list[0].name).to.be.a('string')
+
+
+        list.forEach(item => {
+            let element = item.name.toUpperCase()
+            expect(element.includes(query.toUpperCase())).to.equal(true)
+        })
     })
 
+    it('if criteria is age, it will show results only searching through the age property of the items', async () => {
+        const query = '23'
+        const criteria = 'age'
+
+        const list = await searchGnomes(query, criteria)
+
+        expect(list).to.be.instanceOf(Array)
+        expect(list).to.have.length(57)
+        expect(list[0].age).to.be.a('number')
+    })
+
+    it('if criteria is hairColor, it will show results only searching through the hairColor property of the items', async () => {
+        const query = 'red'
+        const criteria = 'hairColor'
+
+        const list = await searchGnomes(query, criteria)
+
+        expect(list).to.be.instanceOf(Array)
+        expect(list).to.have.length(272)
+        expect(list[0].hair_color).to.be.a('string')
+    })
+    
 })

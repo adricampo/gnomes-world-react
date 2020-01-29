@@ -3,10 +3,7 @@ const {dataResponse} = require('../../utils/fetch')
 
 export default function (query, criteria) { 
     validate.string(query)
-    validate.string.notVoid('query', query)
-
     validate.string(criteria)
-    validate.string.notVoid('criteria', criteria)
 
     return (async () => {
         query = query.toUpperCase()
