@@ -40,6 +40,11 @@ describe('logic search-gnomes', () => {
         expect(list).to.be.instanceOf(Array)
         expect(list).to.have.length(57)
         expect(list[0].age).to.be.a('number')
+
+        list.forEach(item => {
+            let element = item.age.toString().toUpperCase()
+            expect(element.includes(query.toUpperCase())).to.equal(true)
+        })
     })
 
     it('if criteria is hairColor, it will show results only searching through the hairColor property of the items', async () => {
@@ -51,6 +56,11 @@ describe('logic search-gnomes', () => {
         expect(list).to.be.instanceOf(Array)
         expect(list).to.have.length(272)
         expect(list[0].hair_color).to.be.a('string')
+
+        list.forEach(item => {
+            let element = item.hair_color.toUpperCase()
+            expect(element.includes(query.toUpperCase())).to.equal(true)
+        })
     })
     
 })

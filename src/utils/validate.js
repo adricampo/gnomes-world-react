@@ -42,7 +42,7 @@ const validate = {
 
 }
 
-validate.string.notVoid = function (query, target) { debugger
+validate.string.notVoid = function (query, target) {
     if (!target.trim().length) throw new ContentError(`${query} is empty or blank`)
 }
 
